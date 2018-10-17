@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Dodawanie zwierzęcia</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../shelterTemplate.xhtml">
+            <ui:define name="top">
+
+                <h1>Schronisko Dom Zwierząt</h1>
+
+
+            </ui:define>
+
+            <ui:define name="left">
+
+                <h:form>
+                    <h:commandLink value="Pokaż zwierzęta" action="#{animalBean.listAllAnimal()}"  />
+                    <br></br>
+
+                    <h:commandLink value="Pokaż koty" action="#{animalBean.listAllCats()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż psy" action="#{animalBean.listAllDogs()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż świnki morskie" action="#{animalBean.listAllGuineaPigs()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż króliki" action="#{animalBean.listAllRabbits()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż inne zwierzęta" action="#{animalBean.listAllOtherAnimals()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż chłopaków" action="#{animalBean.listAllBoys()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż dziewczyny" action="#{animalBean.listAllGirls()}"/>
+                    <br></br>
+                    <h:commandLink value="Powrót do głównej" action="index.xhtml"/>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+                <h3>Witaj na stronie administracyjnej schroniska Dom zwierząt.</h3>
+
+                <h3>Aby dodać zwierzę, wypełnij pola formularza i kliknij przycisk "Zapisz"</h3>
+                <h2>Dodaj nowe zwierzę</h2>
+                <p></p>
+                <h:form>
+                    <h:panelGrid columns="3"> 
+                        <h:outputLabel value="Gatunek" />
+
+                        <h:selectOneMenu id="species" value="#{animalBean.animalDTO.species}" >
+                            <f:selectItem itemValue="Pies"/>
+                            <f:selectItem itemValue="Kot"/>
+                            <f:selectItem itemValue="Świnka morska"/>
+                            <f:selectItem itemValue="Królik"/>
+                            <f:selectItem itemValue="Inne (proszę podać w opisie)" />
+                        </h:selectOneMenu>
+                        <p></p>
+
+                        <h:outputLabel value="Imię"/>
+                        <h:inputText id="name" value="#{animalBean.animalDTO.name}"/>
+                        <p></p>
+
+                        <h:outputLabel value="Płeć"/>
+                        <h:selectOneMenu id="sex" value="#{animalBean.animalDTO.sex}">
+                            <f:selectItem itemValue="Męska"/>
+                            <f:selectItem itemValue="Żeńska"/>
+                        </h:selectOneMenu>
+                        <p></p>
+
+                        <h:outputLabel value="Wiek"/>
+                        <h:inputText id="age" value="#{animalBean.animalDTO.age}"/>
+                        <p></p>
+
+                        <h:outputLabel value="Opis"/>
+                        <h:inputText id="description" value="#{animalBean.animalDTO.description}"/>
+
+                        <h:commandButton id="saveAnimal" value="Zapisz" action="#{animalBean.saveAnimal()}" />
+
+
+                    </h:panelGrid>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+
+                    Aby wyświetlić listę zwierząt do edycji lub usunięcia, kliknij link <h:link value="Zwierzęta - zarządzanie" outcome="/AnimalAdministrationPages/listAnimalAdministration" onclick="#{animalBean.listAllAnimal()}"/>
+                </h:form>
+
+
+
+
+            </ui:define>
+        </ui:composition>
+
+
+
+    </h:body>
+</html>
+

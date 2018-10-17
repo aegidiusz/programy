@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Dodano zwierzę</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../shelterTemplate.xhtml">
+            <ui:define name="top">
+
+                <h1>Schronisko Dom Zwierząt</h1>
+
+
+            </ui:define>
+
+            <ui:define name="left">
+
+                <h:form>
+                    <h:commandLink value="Pokaż zwierzęta" action="#{animalBean.listAllAnimal()}"  />
+                    <br></br>
+
+                    <h:commandLink value="Pokaż koty" action="#{animalBean.listAllCats()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż psy" action="#{animalBean.listAllDogs()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż świnki morskie" action="#{animalBean.listAllGuineaPigs()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż króliki" action="#{animalBean.listAllRabbits()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż inne zwierzęta" action="#{animalBean.listAllOtherAnimals()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż chłopaków" action="#{animalBean.listAllBoys()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż dziewczyny" action="#{animalBean.listAllGirls()}"/>
+                    <br></br>
+                    <h:commandLink value="Powrót do głównej" action="index.xhtml"/>
+                </h:form>
+            </ui:define>
+
+
+            <ui:define name="content">
+                Do bazy z powodzeniem dodano nowe zwierzę:
+                <h:panelGrid columns="2" cellspacing="3">
+                    <h:outputLabel for="species" value="Gatunek: "/>
+                    <h:outputText id="species" value="#{animalBean.animalDTO.species}"/>
+                    <h:outputLabel for="name" value="Imię: "/>
+                    <h:outputText id="name" value="#{animalBean.animalDTO.name}"/>
+                    <h:outputLabel for="sex" value="Płeć: "/>
+                    <h:outputText id="sex" value="#{animalBean.animalDTO.sex}"/>
+                    <h:outputLabel for="age" value="Wiek: "/>
+                    <h:outputText id="age" value="#{animalBean.animalDTO.age}"/>
+                    <h:outputLabel for="description" value="Opis: "/>
+                    <h:outputText id="description" value="#{animalBean.animalDTO.description}"/>
+
+
+                </h:panelGrid>
+                <p>Aby dodać kolejne zwierzę, wróć do strony <h:link value="Dodawanie zwierzęcia" outcome="/AnimalAdministrationPages/addingAnimal"/></p>
+                <p>Aby wyświetlić listę zwierząt i zarządzać nimi kliknij link <h:link value="Zwierzęta - zarządzanie" outcome="/AnimalAdministrationPages/listAnimalAdministration"/></p> 
+                <p>Powrót do strony głównej: <h:link value="Wróć do głównej" outcome="/index"/></p>
+
+                <center><img src="../resources/images/animals1.png" width="35%" height="35%" /></center>
+            </ui:define>
+        </ui:composition>
+
+
+
+        <p><h:link value="Powrót" outcome="index"/> do strony głównej schroniska</p>
+
+    </h:body>
+</html>
+

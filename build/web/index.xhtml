@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Schronisko</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./shelterTemplate.xhtml">
+            <ui:define name="top">
+
+                <h1>Schronisko Dom Zwierząt</h1>
+
+
+            </ui:define>
+
+            <ui:define name="left">
+
+                <h:form>
+                    <h:commandLink value="Pokaż zwierzęta" action="#{animalBean.listAllAnimal()}"  />
+                    <br></br>
+
+                    <h:commandLink value="Pokaż koty" action="#{animalBean.listAllCats()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż psy" action="#{animalBean.listAllDogs()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż świnki morskie" action="#{animalBean.listAllGuineaPigs()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż króliki" action="#{animalBean.listAllRabbits()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż inne zwierzęta" action="#{animalBean.listAllOtherAnimals()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż chłopaków" action="#{animalBean.listAllBoys()}"/>
+                    <br></br>
+                    <h:commandLink value="Pokaż dziewczyny" action="#{animalBean.listAllGirls()}"/>
+                    <br></br>
+                    <h:commandLink value="Powrót do głównej" action="index.xhtml"/>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+                <h3>Witaj na stronie schroniska Dom zwierząt.</h3>
+                <h:form>
+
+                    <p></p>
+                    Aby wyświetlić dane zwierząt znajdujących się w bazie danych schroniska, 
+                    kliknij odpowiedni link z lewej strony
+                    <p></p>
+                    Wejście na strony administracyjne schroniska (po zalogowaniu): <h:link value ="Administracja" 
+                                                                                           outcome="AnimalAdministrationPages/addingAnimal"/>
+
+
+                </h:form>
+                <br></br>
+                <center><img src="resources/images/animals1.png" width="35%" height="35%" /></center>
+            </ui:define>
+        </ui:composition>
+
+
+    </h:body>
+</html>
+
