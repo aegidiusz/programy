@@ -51,42 +51,42 @@ public class AnimalBean implements Serializable {
 
     public String listAllAnimal() {
         animalEndpoint.listAllAnimal(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllCats() {
         animalEndpoint.listAllCats(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllDogs() {
         animalEndpoint.listAllDogs(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllGuineaPigs() {
         animalEndpoint.listAllGuineaPigs(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllRabbits() {
         animalEndpoint.listAllRabbits(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllOtherAnimals() {
         animalEndpoint.listAllOtherAnimal(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllBoys() {
         animalEndpoint.listAllBoys(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String listAllGirls() {
         animalEndpoint.listAllGirls(animalDTO);
-        return "listAnimal.xhtml";
+        return "/listAnimal.xhtml";
     }
 
     public String deleteAnimal(Animal animal) {
